@@ -2,13 +2,12 @@
 // You should implement your task here.
 
 module.exports = function towelSort (matrix) {
-
-  // сначала .flat потом .sort
-  matrix[0].sort();
-  matrix[1].sort().reverse();
-  matrix[2].sort();
-
+  
   
 
-  return matrix.flat();
-}
+  matrix[0].sort((a, b) => (a - b));
+  matrix[1].sort((a, b) => (b - a));
+  matrix[2].sort((a, b) => (a - b));
+  
+    return matrix.flat();
+  }
