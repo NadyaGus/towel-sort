@@ -8,16 +8,11 @@ module.exports = function towelSort (matrix) {
   } else if (matrix.length === 0) {
     return [];
   } else {
-    matrix[0].sort((a, b) => (a - b));
-    matrix[1].sort((a, b) => (b - a));
-    matrix[2].sort((a, b) => (a - b));
-    return matrix.flat();
+    let arr =[];
+    for (i = 0; i < matrix.length; i++) {
+      (i % 2 === 0 || i === 0) ? arr.push(matrix[i].sort((a, b) => (a - b))) : arr.push(matrix[i].sort((a, b) => (b - a)));
+    }
+    return arr.flat();
   }
   }
-
-
-  /*
-  попробовать сделать новый массив
-
-  */
   
